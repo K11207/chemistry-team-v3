@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .video-card h3 {
+            margin-top: 0;
+        }
+        video {
+            width: 100%;
+            border-radius: 6px;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .welcome-message {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #333;
+        }
+    </style>
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'team' && password === '1234') {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                document.getElementById('welcomeUser').textContent = 'Welcome, ' + username + '!';
+            } else {
+                alert('Incorrect username or password.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="loginPage" class="login-container">
+        <h2>Login to Chemistry Team</h2>
+        <form onsubmit="login(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Log In">
+        </form>
+    </div>
+
+    <div id="mainContent" style="display: none;">
+        <header>
+            <h1>🧪 Chemistry Team</h1>
+            <p>Watch all shared content in one place</p>
+        </header>
+
+        <div class="container">
+            <div class="welcome-message" id="welcomeUser"></div>
+
+            <!-- Videos will be added later -->
+            <div class="video-card">
+                <h3>Coming Soon</h3>
+                <p>Videos will be available here soon. Stay tuned!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
