@@ -12,7 +12,7 @@
       padding: 0;
     }
     header {
-      background: #222;
+      background: #222; 
       color: white;
       padding: 20px;
       text-align: center;
